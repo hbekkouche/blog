@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+      {{- partial "header.html" . -}}
+
+      <main role="main" class="flex-shrink-0">
+        <div class="container">
+
+          <div class="jumbotron jumbotron-fluid {{if .Params.dark_thumbnail}}dark-thumbnail{{end}}" 
+          style="background-image: url('{{ .Params.thumbnail }}');background-color: {{ .Params.thumbnail_bg_color }}">
+            <div class="container">
+              <p class="lead"></p>
+            </div>
+          </div>
+            <h1 class="display-4">{{ .Title }}</h1>
+            {{ .TableOfContents }}
+            {{ .Content }}
+        </div>
+      </main>   
+      {{- partial "footer.html" . -}}
+    </body>
+</html>

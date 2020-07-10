@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+<body>
+{{- partial "header.html" . -}}
+<main role="main" class="flex-shrink-0">
+    <div class="container mt-3">
+        {{ .Content }}
+        Social network:
+        {{ with .Site.Social.github }}
+        <a href="//github.com/{{.}}" target="_blank" rel="noopener" title="GitHub">
+            <i data-feather="github" color="black" stroke-width="2" width="32" height="32" fill="none"></i>
+        </a>
+        {{ end }}
+        {{ with .Site.Social.twitter }}
+        <a href="//twitter.com/{{.}}" target="_blank" rel="noopener" title="Twitter">
+            <i data-feather="twitter" stroke-width="2" width="32" height="32" fill="none"></i>
+        </a>
+        {{ end }}
+        {{ with .Site.Social.linkedin }}
+        <a href="//linkedin.com/in/{{.}}" target="_blank" rel="noopener" title="Linkedin">
+            <i data-feather="linkedin" color="#0077b5" stroke-width="2" width="32" height="32" fill="none"></i>
+        </a>
+        {{ end }}
+        <hr>
+    </div>
+</main>
+{{- partial "footer.html" . -}}
+</body>
+</html>

@@ -1,0 +1,43 @@
+baseURL = "http://hbekkouche.com/"
+languageCode = "en-us"
+title = "Hocine BEKKOUCHE"
+theme = "hoo"
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+[social]
+  github = "hbekkouche"
+  twitter = "bek_hocine"
+  linkedin = "hbekkouche"
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[params]
+  titleEmoji = ":tada:"
+  # change this!
+  twitter = "siegerts"
+
+[Permalinks]
+  posts = "post/:slug"
+
+[[params.menu]]
+  name = "Blog"
+  url = "/posts"
+
+[[params.menu]]
+  name = "About"
+  url = "/about"

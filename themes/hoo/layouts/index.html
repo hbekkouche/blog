@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
+{{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
+{{ $section_count := len $section }}
+{{ $n_posts := $.Param "recent_posts_number" | default 6 }}
+<div class="jumbotron bg-dark text-white p-4">
+    <div class="card mb-3 bg-dark text-white" style="max-width: 800px;margin-left: auto;margin-right: auto">
+        <div class="row no-gutters">
+            <div class="col-md-4"
+                 style="height:200px;background-image: url('/images/me.jpg');background-size: contain;background-repeat: no-repeat;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title">Hello, world!</h1>
+                    <p class="card-text">I'm Hocine and this is my humble blog.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        {{ range (first $n_posts $section) }}
+        <div class="col-md-4">
+            <div class="card text-center p-3">
+                <a href="{{ .Permalink }}"><img src="{{ .Params.thumbnail }}" class="card-img-top"></a>
+                <div class="card-body">
+                    <a href="{{ .Permalink }}"><h5 class="card-title">{{ .Title }}</h5></a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <hr>
+
+</div>
+{{ end }}
