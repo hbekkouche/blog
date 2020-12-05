@@ -1,3 +1,6 @@
 [submodule "public"]
 	path = public
 	url = https://github.com/hbekkouche/hbekkouche.github.io.git
+[submodule "podcasts-list"]
+	path = podcasts-list
+	url = https://github.com/hbekkouche/podcasts-list.git
